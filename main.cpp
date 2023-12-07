@@ -249,7 +249,6 @@ int WINAPI WinMain(HINSTANCE hInstance,
     ShowWindow(hwnd, nCmdShow);
     EnableOpenGL(hwnd, &hDC, &hRC);
     Init();
-    Start_Pos();
     while (!bQuit)
     {
         if (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
@@ -295,6 +294,9 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
         {
         case VK_ESCAPE:
             PostQuitMessage(0);
+            break;
+        case 'R':
+            Init();
             break;
         }
     }
