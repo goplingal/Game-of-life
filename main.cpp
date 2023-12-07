@@ -12,8 +12,8 @@ void DisableOpenGL(HWND, HDC, HGLRC);
 #define alive '*'
 #define dead ' '
 
-char a[h][w + 1];
-char a1[h][w + 1];
+char a[h][w];
+char a1[h][w];
 
 void Start_Pos();
 void Check_Born(int x, int y);
@@ -188,7 +188,7 @@ void Show()
     New_Map();
     glLoadIdentity();
     glScalef(2.0 / h, 2.0 / w, 1);
-    glTranslatef(-h * 0.5, -h * 0.5, 0);
+    glTranslatef(-w * 0.5, -h * 0.5, 0);
     for (int j = 0; j < h; j++)
     {
         for (int i = 0; i < w; i++)
